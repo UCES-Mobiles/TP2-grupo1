@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.mb.zagabaplaylist.databinding.ActivityMainBinding
+import com.mb.zagabaplaylist.ui.AddSongActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-
-        binding.tvTitle.text="1234"
+        startActivity(Intent(this, AddSongActivity::class.java))
+        finish()
 
 
     }
