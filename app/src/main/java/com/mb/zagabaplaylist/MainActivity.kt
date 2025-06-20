@@ -1,11 +1,13 @@
 package com.mb.zagabaplaylist
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.mb.zagabaplaylist.databinding.ActivityMainBinding
+import com.mb.zagabaplaylist.ui.AddSongActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,13 +18,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
+        startActivity(Intent(this, AddSongActivity::class.java))
+        finish()
 
-        binding.tvTitle.text="1234"
 
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
     }
+
 }
