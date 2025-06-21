@@ -1,5 +1,6 @@
 package com.mb.zagabaplaylist.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ class SongListActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySongListBinding
     private val viewModel = SharedViewModel.songViewModel
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySongListBinding.inflate(layoutInflater)
@@ -23,7 +25,7 @@ class SongListActivity : AppCompatActivity() {
             val itemBinding = ItemSongBinding.inflate(inflater, binding.containerSongs, false)
             itemBinding.tvTitle.text = song.title
             itemBinding.tvAuthor.text = song.author
-            itemBinding.tvDuration.text = "Duración: ${song.duration} - ${song.rating} ★"
+            itemBinding.tvRating.text = "⭐".repeat(song.rating)
             binding.containerSongs.addView(itemBinding.root)
         }
 

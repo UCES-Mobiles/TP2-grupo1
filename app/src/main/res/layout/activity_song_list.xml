@@ -19,7 +19,5 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp" />
 
-        <!-- Los items de canción se agregan dinámicamente debajo -->
-
     </LinearLayout>
 </ScrollView>
