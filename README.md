@@ -60,4 +60,14 @@ Generacion base del proyecto.
 
 https://github.com/user-attachments/assets/513a3180-999f-49a3-b79b-db75560bf49a
 
+Distribución de tareas:
+Durante el desarrollo del proyecto nos reunimos varias veces de forma virtual para pensar ideas, buscar soluciones a los problemas que iban surgiendo y tomar decisiones en conjunto. Cada uno fue aportando desde su lugar, ya sea con ideas, pruebas o ayudando a resolver errores.
+Las tareas de testing no fueron dejadas de lado, buscando la posibilidad de llegar a errores debido a falta de limitaciones o buscando introducir valores erroneos.
+No obstante, el lineamiento de trabajo enfocado a las siguientes tareas fué el siguiente:
+
+*Damian Zamora:* Validación de los distintos datos a ingresar por el usuario al momento del registro del evento. Desarrollo de pantalla de listado de canciones. Creación del proyecto base y primer versión general.
+
+*Mariano Barbieri:* Desarrollo de pantalla main (registro de elementos) con ingreso de datos y el manejo de los mismos. Gestión de Datos con ViewModel, manejo de memoria y edición/eliminación de los mismos. Desarrollo de activity de edición/eliminación de los elementos seleccionados
+
+*Gaspar Gatti:* Desarrollo de Testing, Interfaz visual dentro de la app y el menú android y agregados solicitados al ReadMe.
 
