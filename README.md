@@ -57,3 +57,7 @@ Generacion base del proyecto.
 - Se crea la carpeta menú que incluye un menú de inclusión de acciones de edición y eliminación.
 - Se agrega un ViewModel llamado SongViewModel.
 - Cambios en estética sobre las primeras versiones, inclusión de nuevos logos y grabación de funcionamiento.
+
+https://github.com/user-attachments/assets/513a3180-999f-49a3-b79b-db75560bf49a
+
+
