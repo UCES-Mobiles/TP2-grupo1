@@ -10,5 +10,16 @@
         android:orientation="vertical"
         android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnGoToAdd"
+            android:text="Agregar otra canción"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Los items de canción se agregan dinámicamente debajo -->
+
+    </LinearLayout>
 </ScrollView>
