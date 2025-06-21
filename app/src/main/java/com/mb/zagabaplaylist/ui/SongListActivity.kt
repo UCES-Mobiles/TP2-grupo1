@@ -1,14 +1,16 @@
 package com.mb.zagabaplaylist.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.mb.zagabaplaylist.databinding.ActivitySongListBinding
 import com.mb.zagabaplaylist.databinding.ItemSongBinding
-import com.mb.zagabaplaylist.utils.SongRepository
+import com.mb.zagabaplaylist.viewmodel.SharedViewModel
 
 class SongListActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySongListBinding
+    private val viewModel = SharedViewModel.songViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,12 +19,16 @@ class SongListActivity : AppCompatActivity() {
 
         val inflater = LayoutInflater.from(this)
 
-        for (song in SongRepository.songs) {
+        for (song in viewModel.songs) {
             val itemBinding = ItemSongBinding.inflate(inflater, binding.containerSongs, false)
             itemBinding.tvTitle.text = song.title
             itemBinding.tvAuthor.text = song.author
-            itemBinding.tvDuration.text = song.duration
+            itemBinding.tvDuration.text = "Duración: ${song.duration} - ${song.rating} ★"
             binding.containerSongs.addView(itemBinding.root)
+        }
+
+        binding.btnGoToAdd.setOnClickListener {
+            startActivity(Intent(this, AddSongActivity::class.java))
         }
     }
 }

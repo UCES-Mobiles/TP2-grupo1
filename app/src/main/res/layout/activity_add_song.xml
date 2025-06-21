@@ -5,20 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/etTitle"
-        android:hint="Nombre de la canción"
+    <Button
+        android:id="@+id/btnGoToList"
+        android:text="Ver lista de canciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="48dp"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:hint="@string/nombre_de_la_cancion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
         />
 
     <EditText
         android:id="@+id/etAuthor"
-        android:hint="Autor"
+        android:hint="@string/autor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="48dp"
+        android:textSize="25sp"
         />
 
     <EditText
@@ -26,14 +33,29 @@
         android:hint="Duración (ej. 3:45)"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="48dp"
+        android:textSize="25sp"
         />
+
+    <TextView
+        android:id="@+id/tvRatingLabel"
+        android:text="Puntuación: 3 ★"
+        android:textSize="25sp"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <SeekBar
+        android:id="@+id/seekBarRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="4"
+        android:layout_marginBottom="25dp"/>
 
     <Button
         android:id="@+id/btnAdd"
         android:text="Agregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="48dp"
+        android:textSize="25sp"
         />
 </LinearLayout>
