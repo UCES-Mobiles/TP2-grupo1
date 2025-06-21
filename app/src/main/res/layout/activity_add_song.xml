@@ -1,53 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FDF4FF">
 
-    <Button
-        android:id="@+id/btnGoToList"
-        android:text="Ver lista de canciones"
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/etTitle"
-        android:hint="@string/nombre_de_la_cancion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="25dp"
-        />
+        <!-- Botón superior -->
+        <Button
+            android:id="@+id/btnGoToList"
+            android:text="Ver lista de canciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#8054A8"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_button"/>
 
-    <EditText
-        android:id="@+id/etAuthor"
-        android:hint="@string/autor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        />
+        <!-- Card contenedor -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
 
-    <TextView
-        android:id="@+id/tvRatingLabel"
-        android:text="Puntuación: 0 ★"
-        android:textSize="25sp"
-        android:layout_marginTop="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <SeekBar
-        android:id="@+id/seekBarRating"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="5"
-        android:layout_marginBottom="25dp"/>
+                <EditText
+                    android:id="@+id/etTitle"
+                    android:hint="Nombre de la canción"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:textSize="16sp"
+                    android:inputType="textPersonName"
+                    android:autofillHints="name" />
 
-    <Button
+                <EditText
+                    android:id="@+id/etAuthor"
+                    android:hint="Autor"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:textSize="16sp"
+                    android:inputType="textPersonName"
+                    android:autofillHints="name" />
+
+                <Spinner
+                    android:id="@+id/spinnerGenre"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tvRatingLabel"
+                    android:text="Puntuación: 0 ★"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <SeekBar
+                    android:id="@+id/seekBarRating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="5"
+                    android:layout_marginBottom="12dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botón de agregar -->
+        <Button
         android:id="@+id/btnAdd"
         android:text="Agregar"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        />
-</LinearLayout>
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_button"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="8dp"/>
+    </LinearLayout>
+</ScrollView>

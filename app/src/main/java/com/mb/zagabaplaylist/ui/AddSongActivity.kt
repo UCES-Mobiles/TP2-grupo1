@@ -1,7 +1,9 @@
 package com.mb.zagabaplaylist.ui
 
+import android.R
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.mb.zagabaplaylist.data.Song
@@ -40,7 +42,18 @@ class AddSongActivity : AppCompatActivity() {
             binding.seekBarRating.progress = (intent.getIntExtra("rating", 3))
             binding.tvRatingLabel.text = "Puntuación: ${binding.seekBarRating.progress} ★"
             binding.btnAdd.text = "Guardar cambios"
+
+            // set genre selection
+            val genre = intent.getStringExtra("genre") ?: "Rock"
+            val index = genre.indexOf(genre)
+            if (index >= 0) binding.spinnerGenre.setSelection(index)
+
         }
+
+        val genres = listOf("Rock", "Pop", "Cumbia", "Sinfónico", "Rap", "Hip-hop", "Folclore", "Jazz", "Blues")
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_item, genres)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinnerGenre.adapter = adapter
 
         binding.btnAdd.setOnClickListener {
             if (!validarCampos()) return@setOnClickListener
@@ -49,8 +62,15 @@ class AddSongActivity : AppCompatActivity() {
             val title = binding.etTitle.text.toString()
             val author = binding.etAuthor.text.toString()
             val rating = binding.seekBarRating.progress
+            val genre = binding.spinnerGenre.selectedItem.toString()
 
-            val song = Song(id = id, title = title, author = author, rating = rating)
+            val song = Song(
+                id = id,
+                title = title,
+                author = author,
+                rating = rating,
+                genre = genre
+            )
 
             if (isEditMode) {
                 viewModel.updateSong(song)

@@ -26,6 +26,7 @@ class SongListActivity : AppCompatActivity() {
         for (song in viewModel.songs) {
             val itemBinding = ItemSongBinding.inflate(inflater, binding.containerSongs, false)
             itemBinding.tvTitle.text = song.title
+            itemBinding.tvGenre.text = song.genre
             itemBinding.tvAuthor.text = song.author
             itemBinding.tvRating.text = "⭐".repeat(song.rating)
             binding.containerSongs.addView(itemBinding.root)
@@ -40,6 +41,7 @@ class SongListActivity : AppCompatActivity() {
                             val intent = Intent(this, AddSongActivity::class.java).apply {
                                 putExtra("song_id", song.id)
                                 putExtra("title", song.title)
+                                putExtra("genre", song.genre)
                                 putExtra("author", song.author)
                                 putExtra("rating", song.rating)
                             }
