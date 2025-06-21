@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        setContentView(R.layout.activity_splash)
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, AddSongActivity::class.java))

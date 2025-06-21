@@ -11,4 +11,15 @@ class SongViewModel : ViewModel() {
     fun addSong(song: Song) {
         _songs.add(song)
     }
+
+    fun updateSong(updatedSong: Song) {
+        val index = _songs.indexOfFirst { it.id == updatedSong.id }
+        if (index != -1) {
+            _songs[index] = updatedSong
+        }
+    }
+
+    fun removeSong(song: Song) {
+        _songs.remove(song)
+    }
 }
